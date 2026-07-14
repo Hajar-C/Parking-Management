@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Mes Réservations</title>
+</head>
+<body class="reservations-page">
+    <div class="page-container">
+        <header class="header">
+            <h1>Mes Réservations</h1>
+        </header>
+        <main class="main-content">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID (Réservation)</th>
+                        <th>Matricule</th>
+                        <th>Zone</th>
+                        <th>Début</th>
+                        <th>Fin</th>
+                        <th>Action</th>
+                        <th>Ticket</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for reservation in reservations %}
+                    <tr>
+                        <td>{{ reservation[5] }}</td> <!-- ID de la place (parking_id) -->
+                        <td>{{ reservation[1] }}</td> <!-- Matricule -->
+                        <td>{{ reservation[2] }}</td> <!-- Zone -->
+                        <td>{{ reservation[3] | format_date }}</td> <!-- Début -->
+                        <td>{{ reservation[4] | format_date }}</td> <!-- Fin -->
+                        <td>
+                            <form action="/cancel/{{ reservation[0] }}" method="POST">
+                                <button type="submit" class="btn">Annuler</button>
+                            </form>
+                        </td>
+                        <td>
+                            <a href="/download_receipt/{{ reservation[0] }}" class="btn">Télécharger</a>
+                        </td>                        
+                                            
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                
+            </table>
+            
+            
+        </main>
+        <footer class="footer">
+            <a href="/slots" class="btn">Voir les places disponibles</a>
+        </footer>
+    </div>
+</body>
+</html>
+ 

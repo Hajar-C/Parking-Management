@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/style.css" rel="stylesheet">
+</head>
+<body class="register-page">
+   <!-- Intégration du formulaire -->
+   <section class="vh-100 d-flex align-items-center justify-content-center">
+    <div class="container">
+      <div class="card">
+        <h2 class="text-center mb-4">Créer un compte</h2>
+        <form method="POST" action="/register">
+          <div class="mb-3">
+            <label for="name" class="form-label">Votre nom</label>
+            <input type="text" id="name" name="name" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Votre e-mail</label>
+            <input type="email" id="email" name="email" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Mot de passe</label>
+            <input type="password" id="password" name="password" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label for="repeat_password" class="form-label">Répétez votre mot de passe</label>
+            <input type="password" id="repeat_password" name="repeat_password" class="form-control" required />
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="terms" required />
+            <label for="terms" class="form-check-label">
+              J'accepte les <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">conditions générales d'utilisation</a>
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary">S'inscrire</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- Modal Bootstrap -->
+  <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="termsModalLabel">Conditions générales d'utilisation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+        </div>
+        <div class="modal-body">
+            <p><strong>1. Objet :</strong> Ces conditions générales d'utilisation (CGU) régissent l'accès et l'utilisation de l'application <strong>ParkIT</strong>. L'objectif principal est de fournir une plateforme permettant la réservation et la gestion des places de parking.</p>
+          
+            <p><strong>2. Utilisation de l'application :</strong></p>
+            <ul>
+              <li>Chaque utilisateur doit créer un compte personnel avec des informations exactes et vérifiables.</li>
+              <li>L'utilisateur s'engage à respecter les règles de bonne conduite, notamment en ne perturbant pas l'expérience des autres utilisateurs.</li>
+              <li>L'utilisation de l'application est strictement personnelle. Le partage de compte est interdit.</li>
+            </ul>
+          
+            <p><strong>3. Réservations :</strong></p>
+            <ul>
+              <li>Les réservations sont acceptées en fonction des disponibilités des places de parking.</li>
+              <li>Une réservation est confirmée uniquement après réception d'un ticket généré par l'application.</li>
+              <li>En cas d'annulation, l'utilisateur doit respecter un délai de préavis minimum de 24 heures avant l'heure de début prévue.</li>
+            </ul>
+          
+            <p><strong>4. Responsabilité :</strong></p>
+            <ul>
+              <li>L'utilisateur est responsable des informations qu'il fournit lors de la création de son compte et lors de la réservation.</li>
+              <li>L'application <strong>ParkIT</strong> ne peut être tenue responsable en cas de fausse déclaration de l'utilisateur.</li>
+              <li>En cas de problème avec une réservation ou une utilisation inappropriée du parking, la responsabilité incombe à l'utilisateur.</li>
+            </ul>
+          
+            <p><strong>5. Politique de confidentialité :</strong></p>
+            <ul>
+              <li>Les données personnelles des utilisateurs, telles que le nom, l'adresse e-mail et les informations du véhicule, sont collectées uniquement pour la gestion des réservations.</li>
+              <li>Ces données ne seront ni vendues ni partagées avec des tiers sans le consentement explicite de l'utilisateur.</li>
+              <li>L'utilisateur peut demander la suppression de ses données personnelles à tout moment en contactant le support à l'adresse suivante : <a href="mailto:support@parkit.com">support@parkit.com</a>.</li>
+            </ul>
+          
+            <p><strong>6. Droits et obligations :</strong></p>
+            <ul>
+              <li>ParkIT se réserve le droit de suspendre ou de désactiver tout compte utilisateur en cas de non-respect des présentes CGU.</li>
+              <li>En cas de maintenance ou de mise à jour, certaines fonctionnalités peuvent être temporairement indisponibles. ParkIT s'engage à informer les utilisateurs en cas d'interruption prolongée.</li>
+            </ul>
+          
+            <p><strong>7. Modifications des CGU :</strong></p>
+            <p>Les présentes CGU peuvent être modifiées à tout moment. Toute modification sera communiquée aux utilisateurs via une notification dans l'application ou par e-mail.</p>
+          
+            <p><strong>8. Loi applicable :</strong></p>
+            <p>Ces CGU sont régies par les lois françaises. Tout litige sera soumis à la juridiction des tribunaux compétents.</p>
+          
+            <p><strong>9. Contact :</strong></p>
+            <p>Pour toute question ou demande relative à l'utilisation de l'application, contactez-nous à l'adresse suivante : <a href="mailto:support@parkit.com">support@parkit.com</a>.</p>
+          </div>          
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+          
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réserver une place</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="reserve-page">
+    <div class="page-container">
+        <header class="header">
+            <h1>Réserver une place</h1>
+        </header>
+
+        <main class="main-content">
+            <form action="/reserve" method="POST" onsubmit="return validateReservationForm()">
+                <label for="matricule">Matricule :</label>
+                <input type="text" name="matricule" id="matricule" required>
+
+                <label for="type_zone">Type de zone :</label>
+                <select name="type_zone" id="type_zone" required onchange="updateZones()">
+                    <option value="" disabled selected>Choisissez un type de zone</option>
+                    <option value="VIP">VIP</option>
+                    <option value="Handicap">Handicap</option>
+                    <option value="Standard">Standard</option>
+                </select>
+                
+                <label for="zone">Zone :</label>
+                <select name="zone" id="zone" required>
+                    <option value="" disabled selected>Choisissez une zone</option>
+                </select>
+                
+                <label for="start_time">Heure et date de début :</label>
+                <input type="datetime-local" name="start_time" id="start_time" required>
+                
+                <label for="end_time">Heure et date de fin :</label>
+                <input type="datetime-local" name="end_time" id="end_time" required>
+                
+                <button type="submit" class="btn">Réserver</button>
+            </form>
+        </main>
+
+        <footer class="footer">
+            <center><a href="/slots" class="btn">Retour aux places disponibles</a></center>
+        </footer>
+    </div>
+
+    <script>
+        const zonesByType = {
+            VIP: JSON.parse('{{ vip_zones | tojson | safe }}'),
+            Handicap: JSON.parse('{{ handicap_zones | tojson | safe }}'),
+            Standard: JSON.parse('{{ standard_zones | tojson | safe }}')
+        };
+    
+        function updateZones() {
+            const typeZone = document.getElementById("type_zone").value;
+            const zoneSelect = document.getElementById("zone");
+    
+            // Réinitialiser les options
+            zoneSelect.innerHTML = '<option value="" disabled selected>Choisissez une zone</option>';
+    
+            // Ajouter les zones disponibles pour le type sélectionné
+            if (zonesByType[typeZone]) {
+                zonesByType[typeZone].forEach(zone => {
+                    const option = document.createElement("option");
+                    option.value = zone;
+                    option.textContent = zone;
+                    zoneSelect.appendChild(option);
+                });
+            }
+        }
+    </script>
+    
+    
+</body>
+</html>
+ 

@@ -1,0 +1,454 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin: 20px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: white; /* Fond blanc pour le tableau */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour un effet moderne */
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px; /* Espacement légèrement augmenté */
+    text-align: center;
+}
+
+table th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase; /* Texte en majuscules */
+}
+
+table td {
+    color: #555; /* Texte plus clair pour les cellules */
+}
+
+
+.gradient-custom-2 {
+    /* Fallback pour les anciens navigateurs */
+    background: #000; /* Noir */
+
+    /* Dégradé pour Chrome, Safari, Opera */
+    background: -webkit-linear-gradient(to right, #000, #007bff);
+
+    /* Dégradé pour les navigateurs modernes (W3C) */
+    background: linear-gradient(to right, #000, #007bff);
+
+    /* Optionnel : coins arrondis pour un design élégant */
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+
+.gradient-form {
+    height: auto !important;
+    padding: 30px; /* Augmentation de l'espacement interne */
+    border-radius: 10px; /* Coins arrondis pour un effet élégant */
+    background-color: white; /* Fond blanc pour un contraste clair */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour un effet moderne */
+}
+
+/* Section Wrapper */
+.smaller-section .container {
+    max-width: 1900px; /* Augmentez la largeur maximale pour un contenu plus spacieux */
+    margin: auto;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    .gradient-form {
+        height: auto !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .gradient-custom-2 {
+        border-top-right-radius: 0.5rem; /* Coins arrondis légèrement augmentés */
+        border-bottom-right-radius: 0.5rem;
+    }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 576px) {
+    .btn {
+        width: 100%; /* Boutons plus larges pour les petits écrans */
+        margin: 5px 0;
+    }
+
+    table th, table td {
+        font-size: 14px; /* Texte plus petit sur mobile */
+    }
+}
+
+.btn-gradient {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, #000, #007bff); /* Dégradé bleu vers noir */
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.3s ease, box-shadow 0.3s ease; /* Animation au survol */
+    cursor: pointer;
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(to right, #007bff, #000); /* Dégradé inversé au survol */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ombre au survol */
+}
+
+
+.container {
+    max-width: 600px; /* Réduire la largeur pour bien centrer */
+    margin: auto; /* Centrer horizontalement */
+    padding: 20px; /* Ajouter de l'espace interne */
+    background-color: #f5f5f5; /* Assurer une couleur de fond */
+    border-radius: 15px; /* Arrondir les bords */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajouter une ombre */
+}
+
+.card {
+    display: flex; /* Utiliser Flexbox pour aligner les colonnes */
+    flex-direction: row; /* Alignement horizontal */
+    min-height: 100%; /* S'assurer que les colonnes remplissent toute la hauteur */
+}
+
+.card-body {
+    flex: 1; /* Chaque colonne occupe la même hauteur */
+    display: flex; /* Flexbox pour aligner le contenu */
+    flex-direction: column;
+    justify-content: center; /* Centrer verticalement le contenu */
+}
+
+.gradient-custom-2 {
+    flex: 1; /* Prend le même espace que l'autre colonne */
+    display: flex; /* Activer Flexbox */
+    align-items: center; /* Centrer verticalement */
+    justify-content: center; /* Centrer horizontalement */
+}
+
+
+.form-check {
+    margin-bottom: 20px; /* Ajouter un espace sous la case à cocher */
+}
+
+button {
+    width: 100%; /* Faire en sorte que le bouton remplisse l'espace disponible */
+}
+
+body {
+    background-color: #eeeeee; /* Couleur de fond gris clair */
+    margin: 0; /* Supprimer les marges */
+    padding: 0; /* Supprimer le padding */
+    min-height: 100vh; /* S'assurer que la hauteur est toujours adaptée */
+    display: flex; /* Flexbox pour centrer */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+}
+
+
+.modal-content {
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+.register-page {
+    background: linear-gradient(to right, #000, #007bff); /* Dégradé de bleu vers noir */
+}
+
+
+/* Styles spécifiques pour la page register */
+.register-page .container {
+    max-width: 600px; /* Conserver la largeur */
+    margin: auto; /* Centrer horizontalement */
+    padding: 20px; /* Espacement interne */
+    background-color: transparent; /* Suppression de l'arrière-plan */
+    border: none; /* Suppression de la bordure */
+    box-shadow: none; /* Suppression de l'ombre */
+}
+
+.register-page .card {
+    padding: 40px; /* Ajouter un espacement interne à la carte */
+    background-color: white; /* Fond blanc */
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre */
+}
+
+.register-page form {
+    width: 100%; /* S'assurer que le formulaire remplit toute la carte */
+}
+
+.register-page button {
+    width: 100px; /* Bouton plein largeur */
+}
+
+ /* Style pour le bouton utilisateur */
+ .user-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.user-dropdown button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.user-dropdown button:hover {
+    background-color: #0056b3;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.user-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.user-info {
+    font-size: 14px;
+    padding: 5px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Styles spécifiques à la page de réservation */
+.reserve-page .page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Supprimer le cadre autour du titre */
+.reserve-page .header {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+/* Supprimer les marges autour du titre */
+.reserve-page .header h1 {
+    margin: 20px 0; /* Ajustez la marge selon vos besoins */
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Supprimer le cadre autour du bouton dans le pied de page */
+.reserve-page .footer {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 10px 0; /* Ajustez la marge selon vos besoins */
+}
+
+/* --- Styles généraux des boutons --- */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Légère ombre au survol */
+}
+
+.reserve-page .btn,
+.reservations-page .btn {
+    width: 150px; /* Largeur fixe pour uniformité */
+    text-align: center;
+    font-size: 16px; /* Taille du texte légèrement augmentée */
+}
+
+/* --- Pied de page boutons --- */
+.reserve-page .footer .btn,
+.reservations-page .footer .btn {
+    margin-top: 15px;
+    background-color: #007bff; /* Couleur bleue par défaut */
+    color: white;
+    font-weight: bold;
+    width: 200px;
+}
+
+.reserve-page .btn:hover {
+    background-color: #0056b3;
+    box-shadow: none; /* Supprime les ombres au survol */
+}
+
+.reserve-page .main-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+}
+
+.reserve-page form {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reserve-page form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.reserve-page form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.reserve-page form select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width:400px; 
+}
+
+/* --- Styles spécifiques pour la page Mes Réservations --- */
+
+/* Conteneur principal */
+.reservations-page .page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* En-tête */
+.reservations-page .header {
+    background-color: transparent;
+    box-shadow: none;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.reservations-page .header h1 {
+    margin: 20px 0;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Contenu principal */
+.reservations-page .main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.reservations-page table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reservations-page table th,
+.reservations-page table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.reservations-page table th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.reservations-page table td {
+    color: #555;
+}
+
+/* Boutons */
+.reservations-page .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reservations-page .btn:hover {
+    background-color: #0056b3;
+    box-shadow: none;
+}
+
+/* Pied de page */
+.reservations-page .footer {
+    background-color: transparent;
+    box-shadow: none;
+    text-align: center;
+    padding: 10px 0;
+}

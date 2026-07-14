@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+
+# Base de données locale (comptes de test)
+parking.db
+
+# Reçus PDF générés
+receipts/
+
+# Divers
+.DS_Store
+Thumbs.db
